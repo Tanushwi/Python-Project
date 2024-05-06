@@ -8,9 +8,9 @@ l.configure(image=photo)
 l.place(x=0,y=0)
 
 root.attributes("-fullscreen",True)
-root.title("INTRODUCTORY SCREEN")
+root.title("INTRODUCTION")
 
-l0=Label(root,text=" COVID-19  \n TESTING \n MANAGEMENT ",fg="black",bg="yellow",font=("Algerian",50,"bold","underline","italic"))
+l0=Label(root,text=" COVID-19  \n TESTING \n MANAGEMENT ",fg="black",bg="yellow",font=("Algerian",60,"bold","underline","italic"))
 l1=Label(root,text=" SUBMITTED BY : ",fg="red",font=("Monotype Corsiva",40,"bold","italic"))
 l2=Label(root,text=" Tanushwi Singh ",fg="magenta",font=("Monotype Corsiva",40,"bold","italic"))
 l3=Label(root,text=" Vishakha Saldi ",fg="magenta",font=("Monotype Corsiva",40,"bold","italic"))
@@ -23,5 +23,5 @@ def waitfn():
     root.destroy()
 
 
-root.after(10000,waitfn)
+root.after(5000,waitfn)
 root.mainloop()
