@@ -4,8 +4,8 @@ import sqlite3
 import os
 
 root=Tk()
-root.geometry("700x600")
-root.title("User Login Screen")
+root.geometry("900x800")
+root.title("User Login")
 
 txtaname=StringVar()
 txtuname=StringVar()
@@ -19,7 +19,7 @@ def login_clicked():
     c.execute("select * from adminlogin where username=? and password=?",(u,p))
     datalist=c.fetchall()
     if len(datalist)==0:
-        messagebox.showinfo("Alert","Username does not exit..Register first")
+        messagebox.showinfo("Alert","Username does not exit..Register first on new user login")
         clear_clicked()
         t1.focus()
     else:
@@ -38,12 +38,11 @@ def clear_clicked():
     txtuname.set("")
     txtpass.set("")
 
-
-l0=Label(root,text="Login Screen")
-l1=Label(root,text="Enter Username")
-l2=Label(root,text="Enter Password")
-t1=Entry(root,textvariable=txtuname)
-t2=Entry(root,textvariable=txtpass,show="*")
+l0=Label(root,text="Login Screen",fg="",bg="",font=("Algerian",50,"bold","italic","underline"))
+l1=Label(root,text="Enter Username",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
+l2=Label(root,text="Enter Password",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
+t1=Entry(root,textvariable=txtuname,fg="",bg="",font=("Monotype Corsiva",40,"bold"))
+t2=Entry(root,textvariable=txtpass,show="*",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
 l0.place(x=250,y=50)
 l1.place(x=150,y=150)
 l2.place(x=150,y=250)
