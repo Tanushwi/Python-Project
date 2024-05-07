@@ -4,7 +4,7 @@ import sqlite3
 import os
 
 root=Tk()
-root.geometry("700x600")
+root.geometry("900x800")
 root.title("Admin Login Screen")
 
 txtuname=StringVar()
@@ -15,12 +15,12 @@ def create_clicked():
     c=con.cursor()
     u=txtuname.get()
     p=txtpass.get()
-    c.execute("select * from adminlogin where username=? and password=?",(u,p))
+    c.execute("select * from newadminlogin where username=? ",(u,))
     datalist=c.fetchall()
     if len(datalist)>0:
         messagebox.showinfo("Alert","Username already exits..")
     else:
-        c.execute("insert into adminlogin(username,password) values (?,?)",(u,p))
+        c.execute("insert into newuserlogin(name,phoneno,username,password) values (?,?,?,?)",(n,ph,u,p))
         con.commit()
         messagebox.showinfo("Congrats","User Created..")
     clear_clicked()
