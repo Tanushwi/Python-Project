@@ -7,14 +7,18 @@ root=Tk()
 root.geometry("900x800")
 root.title("Admin Login Screen")
 
-txtuname=StringVar()
-txtpass=StringVar()
+txtname=StringVar()
+txtphoneno=StringVar()
+txtusername=StringVar()
+txtpassword=StringVar()
 
 def create_clicked():
     con=sqlite3.connect("mydatabase.sqlite")
     c=con.cursor()
-    u=txtuname.get()
-    p=txtpass.get()
+    n = txtname.get()
+    ph = txtphoneno.get()
+    u = txtusername.get()
+    p = txtpassword.get()
     c.execute("select * from newadminlogin where username=? ",(u,))
     datalist=c.fetchall()
     if len(datalist)>0:
