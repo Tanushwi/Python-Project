@@ -5,7 +5,7 @@ import os
 
 root=Tk()
 root.geometry("800x900")
-root.title("Admin Login Screen")
+root.title("ADMIN LOGIN PAGE")
 
 txtaname=StringVar()
 txtuname=StringVar()
