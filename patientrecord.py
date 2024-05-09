@@ -13,11 +13,7 @@ def submit_record():
     conn = sqlite3.connect('mydatabase.sqlite')
     c = conn.cursor()
 
-    c.execute('''CREATE TABLE IF NOT EXISTS patient_records (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    patient_name TEXT,
-                    test_result TEXT)''')
-
+    c.execute('''CREATE TABLE IF NOT EXISTS patient_records (id INTEGER PRIMARY KEY AUTOINCREMENT,patient_name TEXT, test_result TEXT)''')
     c.execute("INSERT INTO patient_records (patient_name, test_result) VALUES (?, ?)", (patient_name, test_result))
     conn.commit()
     conn.close()
@@ -34,12 +30,10 @@ def exit():
     root.destroy()
 
 root = Tk()
-root.geometry("400x200")
-root.title("Patient Record Entry")
-
-name_label = Label(root, text="Patient Name:")
-result_label = Label(root, text="Test Result:")
-
+root.geometry("900x800")
+root.title("Patient Record Entry",fg="",bg="",font=("Algerian",50,"bold","italic"))
+name_label = Label(root, text="Patient Name:",fg=""bg="",font=("Monotype Corsiva",40,"bold"))
+result_label = Label(root, text="Test Result:",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
 
 name_entry = Entry(root)
 result_var = StringVar(value="Negative")
