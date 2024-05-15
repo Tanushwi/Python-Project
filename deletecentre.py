@@ -8,11 +8,10 @@ def delete_record():
         messagebox.showerror("Error", "Please enter a record ID to delete")
         return
 
-    
     conn = sqlite3.connect("mydatabase.sqlite")
     c = conn.cursor()
 
-    c.execute("SELECT * FROM users WHERE id=?", (record_id,))
+    c.execute("select * from users WHERE id=?", (record_id,))
     record = c.fetchone()
     if not record:
         messagebox.showerror("Error", f"No record found with ID {record_id}")
@@ -35,10 +34,10 @@ def exit_app():
     root.destroy()
 
 root = Tk()
-root.geometry("400x200")
-root.title("Delete Record")
+root.geometry("900x800")
+root.title("Delete Centre Screen")
 
-record_id_label = Label(root, text="Enter Record ID:")
+record_id_label = Label(root, text="Enter Record ID:",fg="",bg="",font=("Monotype",40,"bold"))
 record_id_label.place(x=50, y=50)
 
 record_id_entry = Entry(root)
