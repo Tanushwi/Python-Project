@@ -3,8 +3,8 @@ from tkinter import messagebox
 import sqlite3
 
 root = Tk()
-root.geometry("400x400")
-root.title("Entry Screen")
+root.geometry("900x800")
+root.title("Centres Entry Screen")
 
 
 def submit_clicked():
@@ -14,10 +14,7 @@ def submit_clicked():
     conn = sqlite3.connect("mydatabase.sqlite")
     c = conn.cursor()
 
-    c.execute('''CREATE TABLE IF NOT EXISTS users (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    name TEXT,
-                    pincode TEXT)''')
+    c.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,pincode TEXT)''')
 
     c.execute("INSERT INTO users (name, pincode) VALUES (?, ?)", (name_text, pincode_text))
     conn.commit()
@@ -32,8 +29,8 @@ def clear_clicked():
 def exit_clicked():
     root.destroy()
 
-name_label = Label(root, text="Name:")
-pincode_label = Label(root, text="Pincode:")
+name_label = Label(root, text="Name:",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
+pincode_label = Label(root, text="Pincode:",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
 
 name_entry = Entry(root)
 pincode_entry = Entry(root)
