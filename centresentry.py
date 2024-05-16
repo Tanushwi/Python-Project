@@ -29,8 +29,8 @@ def clear_clicked():
 def exit_clicked():
     root.destroy()
 
-name_label = Label(root, text="Name:",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
-pincode_label = Label(root, text="Pincode:",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
+name_label = Label(root, text="Name:")
+pincode_label = Label(root, text="Pincode:")
 
 name_entry = Entry(root)
 pincode_entry = Entry(root)
@@ -39,12 +39,12 @@ submit_button = Button(root, text="Submit", command=submit_clicked)
 clear_button = Button(root, text="Clear", command=clear_clicked)
 exit_button = Button(root, text="Exit", command=exit_clicked)
 
-name_label.place(x=50, y=100)
-name_entry.place(x=200, y=100)
-pincode_label.place(x=50, y=150)
-pincode_entry.place(x=200, y=150)
-submit_button.place(x=50, y=200)
-clear_button.place(x=150, y=200)
-exit_button.place(x=250, y=200)
+name_label.place()
+name_entry.place()
+pincode_label.place()
+pincode_entry.place()
+submit_button.place()
+clear_button.place()
+exit_button.place()
 
 root.mainloop()
