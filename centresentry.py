@@ -5,7 +5,7 @@ import sqlite3
 root = Tk()
 root.geometry("900x800")
 root.title("Centres Entry Screen")
-
+root.configure(background='lightgray')  
 
 def submit_clicked():
     name_text = name_entry.get()
@@ -29,22 +29,25 @@ def clear_clicked():
 def exit_clicked():
     root.destroy()
 
-name_label = Label(root, text="Name:")
-pincode_label = Label(root, text="Pincode:")
+title_label = Label(root, text="Centres Entry Screen", font=("Monotype Corsiva", 50, "bold"), fg="navy", bg="lightgray")
+title_label.place(x=200, y=50)
 
-name_entry = Entry(root)
-pincode_entry = Entry(root)
+name_label = Label(root, text="Name:", font=("Monotype Corsiva", 30, "bold"), fg="black", bg="lightgray")
+pincode_label = Label(root, text="Pincode:", font=("Monotype Corsiva", 30, "bold"), fg="black", bg="lightgray")
 
-submit_button = Button(root, text="Submit", command=submit_clicked)
-clear_button = Button(root, text="Clear", command=clear_clicked)
-exit_button = Button(root, text="Exit", command=exit_clicked)
+name_entry = Entry(root, font=("Arial", 20))
+pincode_entry = Entry(root, font=("Arial", 20))
 
-name_label.place()
-name_entry.place()
-pincode_label.place()
-pincode_entry.place()
-submit_button.place()
-clear_button.place()
-exit_button.place()
+submit_button = Button(root, text="Submit", command=submit_clicked, font=("Arial", 20))
+clear_button = Button(root, text="Clear", command=clear_clicked, font=("Arial", 20))
+exit_button = Button(root, text="Exit", command=exit_clicked, font=("Arial", 20))
+
+name_label.place(x=50, y=200)
+name_entry.place(x=250, y=210)
+pincode_label.place(x=50, y=300)
+pincode_entry.place(x=250, y=310)
+submit_button.place(x=200, y=400)
+clear_button.place(x=350, y=400)
+exit_button.place(x=500, y=400)
 
 root.mainloop()
