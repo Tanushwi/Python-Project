@@ -30,10 +30,10 @@ def exit():
     root.destroy()
 
 root = Tk()
-root.geometry("900x800")
-root.title("Patient Record Entry",fg="",bg="",font=("Algerian",50,"bold","italic"))
-name_label = Label(root, text="Patient Name:",fg=""bg="",font=("Monotype Corsiva",40,"bold"))
-result_label = Label(root, text="Test Result:",fg="",bg="",font=("Monotype Corsiva",40,"bold"))
+root.geometry("1000x900")
+root.title("Patient Record Entry",fg="black",bg="yellow",font=("Algerian",50,"bold","italic"))
+name_label = Label(root, text="Patient Name:",fg="green",bg="orange",font=("Monotype Corsiva",40,"bold"))
+result_label = Label(root, text="Test Result:",fg="green",bg="orange",font=("Monotype Corsiva",40,"bold"))
 
 name_entry = Entry(root)
 result_var = StringVar(value="Negative")
