@@ -21,7 +21,7 @@ l3.place(x=560,y=570)
 def waitfn():
     time.sleep(1)
     root.destroy()
-
+    import menuscreen
 
 root.after(5000,waitfn)
 root.mainloop()
