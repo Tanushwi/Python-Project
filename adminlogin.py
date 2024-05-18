@@ -1,63 +1,54 @@
 from tkinter import *
 from tkinter import messagebox
 import sqlite3
-import os
 
-root=Tk()
-root.geometry("800x900")
-root.title("ADMIN LOGIN PAGE")
+root = Tk()
+root.geometry("900x800")
+root.title("Centres Entry Screen")
+root.configure(background='lightgray')  
 
-txtaname=StringVar()
-txtuname=StringVar()
-txtpass=StringVar()
+def submit_clicked():
+    name_text = name_entry.get()
+    pincode_text = pincode_entry.get()
+    
+    conn = sqlite3.connect("mydatabase.sqlite")
+    c = conn.cursor()
 
-def login_clicked():
-    con=sqlite3.connect("mydatabase.sqlite")
-    c=con.cursor()
-    u=txtuname.get()
-    p=txtpass.get()
-    c.execute("select * from adminlogin where username=? and password=?",(u,p))
-    datalist=c.fetchall()
-    if len(datalist)==0:
-        messagebox.showinfo("Alert","Username does not exit..Register first")
-        clear_clicked()
-        t1.focus()
-    else:
-        messagebox.showinfo("Congrats","Login successful..")
-    con.close()
+    c.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,pincode TEXT)''')
 
-def create_clicked():
-    root.destroy()
-    os.system("newadminlogin.py")
+    c.execute("INSERT INTO users (name, pincode) VALUES (?, ?)", (name_text, pincode_text))
+    conn.commit()
+    conn.close()
+    
+    messagebox.showinfo("Success", "Data submitted successfully")
+
+def clear_clicked():
+    name_entry.delete(0, END)
+    pincode_entry.delete(0, END)
 
 def exit_clicked():
     root.destroy()
 
-def clear_clicked():
-    txtaname.set("")
-    txtuname.set("")
-    txtpass.set("")
+title_label = Label(root, text="Centres Entry Screen", font=("Monotype Corsiva", 50, "bold"), fg="navy", bg="lightgray")
+title_label.place(x=200, y=50)
 
+name_label = Label(root, text="Name:", font=("Monotype Corsiva", 30, "bold"), fg="black", bg="lightgray")
+pincode_label = Label(root, text="Pincode:", font=("Monotype Corsiva", 30, "bold"), fg="black", bg="lightgray")
 
-l0=Label(root,text="Admin Login Screen",fg="",bg="",font=("Algerian",60,"bold","underline","italic"))
-l1=Label(root,text="Enter Username",fg="",bg="",font=("Monotype Corsiva",40,"bold","italic"))
-l2=Label(root,text="Enter Password",fg="",bg="",font=("Monotype Corsiva",40,"bold","italic"))
-t1=Entry(root,textvariable=txtuname)
-t2=Entry(root,textvariable=txtpass,show="*")
-l0.place(x=250,y=50)
-l1.place(x=290,y=350)
-l2.place(x=320,y=450)
-t1.place(x=340,y=350)
-t2.place(x=360,y=450)
+name_entry = Entry(root, font=("Arial", 20))
+pincode_entry = Entry(root, font=("Arial", 20))
 
-b0=Button(root,text="Login",command=login_clicked)
-b1=Button(root,text="New Admin Login",command=create_clicked)
-b2=Button(root,text="Clear",command=clear_clicked)
-b3=Button(root,text="Exit",command=exit_clicked)
-b0.place(x=150,y=450)
-b1.place(x=200,y=450)
-b2.place(x=330,y=450)
-b3.place(x=380,y=450)
-t1.focus()
+submit_button = Button(root, text="Submit", command=submit_clicked, font=("Arial", 20))
+clear_button = Button(root, text="Clear", command=clear_clicked, font=("Arial", 20))
+exit_button = Button(root, text="Exit", command=exit_clicked, font=("Arial", 20))
+
+name_label.place(x=50, y=200)
+name_entry.place(x=250, y=210)
+pincode_label.place(x=50, y=300)
+pincode_entry.place(x=250, y=310)
+submit_button.place(x=200, y=400)
+clear_button.place(x=350, y=400)
+exit_button.place(x=500, y=400)
+
 root.mainloop()
 
