@@ -16,7 +16,7 @@ def submit_clicked():
 
     c.execute('''CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,pincode TEXT)''')
 
-    c.execute("INSERT INTO users (name, pincode) VALUES (?, ?)", (name_text, pincode_text))
+    c.execute("INSERT INTO users (name, pincode) VALUES (?,?)", (name_text, pincode_text))
     conn.commit()
     conn.close()
     
