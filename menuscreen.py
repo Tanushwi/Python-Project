@@ -30,14 +30,11 @@ l.place(x=0,y=0)
 root1.attributes("-fullscreen",True)
 root1.title("MAIN MENU")
 
-
 l0=Label(root1,text=" WELCOME \n TO \n COVID-19 \n TESTING \n MANAGEMENT ",fg="purple",font=("Monotype Corsiva",65,"bold","underline"))
 l0.place(x=700,y=150)
 
-
 mymenu=Menu(root1)
 root1.config(menu=mymenu)
-
 
 centremenu=Menu(mymenu)
 loginmenu=Menu(mymenu)
