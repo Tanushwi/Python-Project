@@ -38,10 +38,10 @@ root.geometry("900x800")
 root.title("Delete Centre Screen")
 
 record_id_label = Label(root, text="Enter Record ID:",fg="black",bg="orange",font=("Monotype",40,"bold"))
-record_id_label.place(x=50, y=50)
+record_id_label.place(x=50, y=60)
 
 record_id_entry = Entry(root)
-record_id_entry.place(x=200, y=50)
+record_id_entry.place(x=200, y=60)
 
 delete_button = Button(root, text="Delete", command=delete_record)
 delete_button.place(x=50, y=100)
