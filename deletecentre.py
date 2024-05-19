@@ -37,7 +37,7 @@ root = Tk()
 root.geometry("900x800")
 root.title("Delete Centre Screen")
 
-record_id_label = Label(root, text="Enter Record ID:",fg="",bg="",font=("Monotype",40,"bold"))
+record_id_label = Label(root, text="Enter Record ID:",fg="black",bg="orange",font=("Monotype",40,"bold"))
 record_id_label.place(x=50, y=50)
 
 record_id_entry = Entry(root)
