@@ -55,6 +55,11 @@
 
 # Project Overview📋
 
+This project aims to develop a comprehensive COVID-19 testing management system that addresses 
+these challenges. The system should allow individuals to easily schedule testing appointments through an 
+online platform or mobile application, streamline the check-in process at testing sites, optimize the allocation
+ of testing resources based on demand and capacity, ensure timely reporting of test results to both individuals 
+and relevant health authorities, and facilitate contact tracing efforts.
 
 
 # Key Features💡
