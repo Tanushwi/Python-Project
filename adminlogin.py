@@ -3,7 +3,7 @@ from tkinter import messagebox
 import sqlite3
 
 root = Tk()
-root.geometry("900x800")
+root.geometry("900x900")
 root.title("Centres Entry Screen")
 root.configure(background='lightgray')  
 
