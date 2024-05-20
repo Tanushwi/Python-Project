@@ -8,7 +8,7 @@ l.configure(image=photo)
 l.place(x=0,y=0)
 
 root.attributes("-fullscreen",True)
-root.title("INTRODUCTION ")
+root.title("INTRODUCTION")
 
 l0=Label(root,text=" COVID-19  \n TESTING \n MANAGEMENT ")
 l1=Label(root,text=" SUBMITTED BY : ")
